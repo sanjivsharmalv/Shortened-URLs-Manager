@@ -1,0 +1,128 @@
+{
+    "name": "laminas/laminas-mvc-skeleton",
+    "description": "Laminas MVC Skeleton Application",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "laminas",
+        "mvc",
+        "skeleton",
+        "framework"
+    ],
+    "require": {
+        "php": "~8.1.0 || ~8.2.0",
+        "ext-intl": "*",
+        "ext-pdo": "*",
+        "defuse/php-encryption": "^2.4",
+        "doctrine/dbal": "^3.7.1",
+        "doctrine/doctrine-module": "^6.0.4",
+        "doctrine/doctrine-orm-module": "6.0.0",
+        "doctrine/migrations": "^3.7",
+        "doctrine/orm": " ^2.16.2",
+        "doctrine/persistence": " ^3.2.0",
+        "hybridauth/hybridauth": "v3.10.0",
+        "laminas-api-tools/api-tools-admin": "^2.1",
+        "laminas/laminas-authentication": "^2.15.0",
+        "laminas/laminas-cache": "^3.11.0",
+        "laminas/laminas-cache-storage-adapter-filesystem": "^2.3.0",
+        "laminas/laminas-captcha": "^2.16.0",
+        "laminas/laminas-cli": "1.8.0",
+        "laminas/laminas-component-installer": "^3.4.0",
+        "laminas/laminas-config": "^3.9",
+        "laminas/laminas-crypt": "^3.10.0",
+        "laminas/laminas-developer-tools": "^2.8",
+        "laminas/laminas-development-mode": "^3.12.0",
+        "laminas/laminas-diactoros": "^3.2.0",
+        "laminas/laminas-httphandlerrunner": "^2.9.0",
+        "laminas/laminas-i18n": "^2.23.1",
+        "laminas/laminas-i18n-resources": "^2.9.0",
+        "laminas/laminas-json": "^3.5.0",
+        "laminas/laminas-mail": "^2.23.0",
+        "laminas/laminas-mime": "^2.11.0",
+        "laminas/laminas-mvc": "^3.7",
+        "laminas/laminas-mvc-i18n": "^1.7.0",
+        "laminas/laminas-mvc-plugin-fileprg": "^1.6.0",
+        "laminas/laminas-mvc-plugin-flashmessenger": "^1.9",
+        "laminas/laminas-paginator": "2.17.0",
+        "laminas/laminas-permissions-acl": "^2.15.0",
+        "laminas/laminas-permissions-rbac": "^3.5.0",
+        "laminas/laminas-psr7bridge": "^1.10.0",
+        "laminas/laminas-router": "^3.13",
+        "laminas/laminas-serializer": "^2.9",
+        "laminas/laminas-servicemanager": "^3.22",
+        "laminas/laminas-session": "^2.16.0",
+        "laminas/laminas-skeleton-installer": "^1.3.0",
+        "laminas/laminas-stdlib": "^3.18.0",
+        "laminas/laminas-stratigility": "^3.10.0",
+        "laminas/laminas-test": "^4.8.0",
+        "laminas/laminas-uri": "^2.11",
+        "laminas/laminas-validator": "^2.39.0",
+        "laminas/laminas-view": "^2.30.0",
+        "league/uri": "^7.4",
+        "monolog/monolog": "^3.5",
+        "ocramius/package-versions": "^2.8.0",
+        "psr/container": "^1.1.2",
+        "symfony/console": "^6.3.4",
+        "symfony/google-mailer": "v6.3.0",
+        "symfony/mailer": "*",
+        "tecnickcom/tcpdf": "^6.6.5"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "laminas/laminas-test": "^4.9",
+        "phpunit/phpunit": "^10.4",
+        "psalm/plugin-phpunit": "^0.18.4",
+        "squizlabs/php_codesniffer": "^3.7",
+        "vimeo/psalm": "^5.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/"
+        }
+    },
+    "scripts": {
+        "clear-config-cache": "php bin/clear-config-cache.php",
+        "cs-check": "vendor/bin/phpcs",
+        "cs-fix": "vendor/bin/phpcbf",
+        "development-disable": "laminas-development-mode disable",
+        "development-enable": "laminas-development-mode enable",
+        "development-status": "laminas-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable",
+            "php bin/update-gitignore.php",
+            "php -r 'if (file_exists(\"bin/remove-package-artifacts.php\")) include \"bin/remove-package-artifacts.php\";'"
+        ],
+        "post-install-cmd": "@clear-config-cache",
+        "post-update-cmd": "@clear-config-cache",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S 0.0.0.0:8080 -t public"
+        ],
+        "test": "vendor/bin/phpunit",
+        "static-analysis": "vendor/bin/psalm --stats"
+    },
+    "scripts-descriptions": {
+        "clear-config-cache": "Clears merged config cache. Required for config changes to be applied.",
+        "cs-check": "Run coding standards checks.",
+        "cs-fix": "Automatically fix coding standard issues.",
+        "development-disable": "Disable development mode.",
+        "development-enable": "Enable development mode.",
+        "development-status": "Detail whether or not the application is in development mode.",
+        "serve": "Start the built-in PHP web server and serve the application.",
+        "static-analysis": "Run static analysis tool Psalm.",
+        "test": "Run unit tests."
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "laminas/laminas-component-installer": true,
+            "laminas/laminas-skeleton-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

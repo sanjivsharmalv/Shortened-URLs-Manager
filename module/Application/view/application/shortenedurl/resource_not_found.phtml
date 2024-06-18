@@ -1,0 +1,32 @@
+
+
+<div class="w-full">
+    <div class="mx-auto px-0 w-full">
+        <?php include __DIR__ . '/../../partials/top_nav_bar_menu_logged_out.phtml'; ?>
+    </div>
+</div>
+<div class="flex">
+    <!-- dashboard -->
+    <?php
+    include __DIR__.'/../../partials/user_sidebar_dashboard.phtml';
+    ?>
+
+    <div class="flex-1">
+
+            <div class="w-full max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6 mt-14">
+                <h2 class="text-2xl font-bold mb-4 text-center text-gray-900">Resource Not Found</h2>
+
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM4.293 5.293a1 1 0 10-1.414 1.414l7 7a1 1 0 001.414 0l7-7a1 1 0 10-1.414-1.414L10 10.586 4.293 4.293z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-red-500 text-lg font-semibold">404</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2 text-gray-700">Oops! Page Not Found</h2>
+                    <p class="text-gray-700">The requested resource could not be found on the server.</p>
+                    <a href="/" class="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Go to Homepage</a>
+
+            </div>
+
+    </div>
+</div>

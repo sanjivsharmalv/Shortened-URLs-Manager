@@ -1,0 +1,175 @@
+/* Custom Styles */
+/* Center content vertically and horizontally */
+
+.fa-font{
+    font-size:24px !important;
+}
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.card-body {
+    color: #4a5568; /* Custom text color */
+    text-align: left;
+}
+
+.card {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.label-text.text-gray-600 {
+    color: #4B5563 !important;
+}
+
+.btn-primary.bg-blue-500{
+    background-color: #3B82F6 !important;
+}
+.btn.bg-yellow-500{
+    bg-yellow-500: #f59e0b !important;
+}
+.btn.bg-yellow-700{
+    bg-yellow-700: #d97706 !important;
+}
+#message.bg-green-500 {
+    background-color: #10B981 !important; /* Correct hex value for bg-green-500 */
+}
+
+.label.label-text.text-gray-800 {
+    color: #1F2937 !important;
+}
+
+
+    @media (min-width: 768px) {
+    .alert {
+        flex-direction: row;
+    }
+}
+
+    #message.alert {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        --tw-bg-opacity: 1;
+        padding: 1rem;
+        border-radius: var(--rounded-box,1rem);
+    }
+    * {box-sizing: border-box}
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    button:hover {
+        opacity:1;
+    }
+
+    /* Float cancel and delete buttons and add an equal width */
+    .cancelbtn, .deletebtn {
+        float: left;
+        width: 50%;
+    }
+
+    /* Add a color to the cancel button */
+    .cancelbtn {
+        background-color: #ccc;
+        color: black;
+    }
+
+    /* Add a color to the delete button */
+    .deletebtn {
+        background-color: #f44336;
+    }
+
+    /* Add padding and center-align text to the container */
+    .container {
+        padding: 16px;
+        text-align: center;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: #474e5d;
+        padding-top: 50px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* Style the horizontal ruler */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* The Modal Close Button (x) */
+    .close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #f44336;
+        cursor: pointer;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+
+    .csrf-element {
+        display: none !important;
+    }
+
+    /* Change styles for cancel button and delete button on extra small screens */
+    @media screen and (max-width: 300px) {
+        .cancelbtn, .deletebtn {
+            width: 100%;
+        }
+    }

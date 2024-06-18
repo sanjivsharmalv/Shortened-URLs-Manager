@@ -1,0 +1,22 @@
+<div class="w-full">
+    <div class="mx-auto px-0 w-full">
+        <?php include __DIR__ . '/../../partials/top_nav_bar_menu_logged_out.phtml'; ?>
+    </div>
+</div>
+<div class="flex mt-14">
+    <!-- Main Content -->
+    <div class="flex-1">
+        <div class="w-full max-w-sm mx-auto bg-white rounded-lg shadow-lg p-6 text-gray-800">
+            <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <svg class="w-12 h-12 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-1.414 1.414A9 9 0 1112 3a9 9 0 011.415 1.414l1.414-1.414a11 11 0 100 15.556l-1.414-1.414A9 9 0 0112 21a9 9 0 01-1.415-1.414l1.414-1.414a11 11 0 0015.556-15.556l-1.414 1.414A11 11 0 0012 21a11 11 0 010-15.556z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold mb-4 text-gray-800">Login Error</h1>
+                <p class="text-gray-600 mb-6">The username or password you entered is incorrect, or the user does not exist. Please try again.</p>
+                <button class="btn btn-primary bg-blue-500 w-full" onclick="window.location.href='/login'">Return to Login</button>
+            </div>
+        </div>
+    </div>
+</div>

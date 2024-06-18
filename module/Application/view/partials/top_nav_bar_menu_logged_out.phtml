@@ -1,0 +1,21 @@
+<?php 
+if(isset($this->user))
+    $user = $this->user;
+?>
+<nav class="bg-gray-800 p-4 w-full">
+    <div class="container mx-auto flex items-center justify-between">
+        <div class="flex items-center">
+            <img  src="<?= $this->basePath('img/img.png') ?>" alt="Global Tickets" class="h-10">
+        </div>
+        <div id="second div" class="flex items-center space-x-4">
+
+            <?php if(!isset($this->user)) { ?>
+                <a href="/users/create" class="text-white">Register</a>
+                <a href="/login" class="text-white">Login</a>
+            <?php } ?>
+
+            <button onclick="setTheme('dark')" class="text-white"><i class="fa fa-moon-o" aria-hidden="true"></i></button>
+            <button onclick="setTheme('light')" class="text-white"><i class="fa fa-sun-o" aria-hidden="true"></i></button>
+        </div>
+    </div>
+</nav>

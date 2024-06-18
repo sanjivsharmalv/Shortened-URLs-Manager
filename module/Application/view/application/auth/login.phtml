@@ -1,0 +1,99 @@
+<?php
+    $loginForm = $this->loginForm;
+
+    $loginForm->getAttributes([
+    'class'=>'form-control needs-validation novalidate',
+    'style'=>'display:contents'
+    ]);
+
+    $emailElement = $loginForm->get('email');
+    $passwordElement = $loginForm->get('password');
+    $csrfElement = $loginForm->get('csrf');
+
+    $submitElement = $loginForm->get('login-submit');
+    $loginForm->prepare();
+
+?>
+
+<div class="min-h-screen">
+    <div class="w-full">
+        <div class="mx-auto px-0 w-full">
+            <?php include __DIR__ . '/../../partials/top_nav_bar_menu_logged_out.phtml'; ?>
+        </div>
+    </div>
+    <div class="flex mt-14">
+        <!-- Main Content -->
+        <div class="flex-1">
+
+            <div class="w-full max-w-sm mx-auto bg-white rounded-lg shadow-lg p-6 text-gray-800">
+                <h2 class="text-2xl font-bold mb-4 text-center ">Login</h2>
+                <!-- Invalid Password Errors-->
+                <?php $loginErrorMessages = $this->loginErrorMessages;
+                if (isset($loginErrorMessages) && !empty($loginErrorMessages)): ?>
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+                        <strong class="font-bold">There are error message(s). Please check the fields below and correct them:</strong>
+                        <ul class="mt-2 list-disc list-inside">
+                            <?php foreach ($loginErrorMessages as $error): ?>
+                                <li><strong><?= htmlspecialchars(ucfirst($error['field']), ENT_QUOTES, 'UTF-8'); ?>:</strong> <?= htmlspecialchars($error['message'], ENT_QUOTES, 'UTF-8'); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+
+                <?php $loginErrorMessages = $this->loginErrorMessages;if (isset($loginErrorMessages['user-password'])): ?>
+                    <!-- Invalid Email Errors-->
+                    <?php if (isset($userErrorMessages['email'])): ?>
+                        <div class="text-red-600 mt-2 text-sm">
+                            <?= htmlspecialchars(implode(', ', $userErrorMessages['email']), ENT_QUOTES, 'UTF-8') ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="text-red-600 mt-2 text-sm">
+                        <?= htmlspecialchars(implode(', ', $loginErrorMessages['user-password']), ENT_QUOTES, 'UTF-8') ?>
+                    </div>
+                <?php endif; ?>
+                <?= $this->form()->openTag($loginForm); ?>
+                <div class="form-control mb-4 ">
+                    <?php
+                    $emailElement->setLabelAttributes(['class' => 'label label-text text-gray-800']);
+                    $emailElement->setLabel('Email')
+                        ->setAttributes([
+                            'class' => 'input input-bordered w-full placeholder-gray-500 placeholder:text-sm text-gray-100',
+                            'placeholder' => 'Enter Email'
+                        ]);
+                    echo $this->formLabel($emailElement, $emailElement->getLabel());
+                    ?>
+                    <?=
+                    $this->formElement($emailElement);
+                    ?>
+                </div>
+                <div class="form-control mb-4">
+                    <?php
+                    $passwordElement->setLabelAttributes(['class' => 'label label-text text-gray-800']);
+                    $passwordElement->setLabel('Password')
+                        ->setAttributes([
+                            'class' => 'input input-bordered w-full placeholder-gray-500 placeholder:text-sm text-gray-100',
+                            'placeholder' => 'Enter Password'
+                        ]);
+                    echo $this->formLabel($passwordElement, $passwordElement->getLabel());
+                    ?>
+                    <?=
+                    $this->formElement($passwordElement);
+                    ?>
+                </div>
+                <?=  $this->formElement($csrfElement); ?>
+                <div class="form-control mb-4">
+                    <button type="submit" class="btn btn-primary w-full bg-blue-500 hover:bg-blue-600 text-gray-100">
+                        <?=
+                        $this->formElement($submitElement);
+                        ?>
+                    </button>
+                </div>
+                <?= $this->form()->closeTag($loginForm); ?>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

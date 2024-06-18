@@ -1,0 +1,41 @@
+:root {
+    --brand-color: #013755;
+}
+
+.navbar {
+    background-color: var(--brand-color);
+}
+
+.btn-primary {
+    background-color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+/* allows bootstrap to style Laminas Navigation generated menu items within the navbar */
+.navbar li.active a {
+    color: var(--bs-navbar-active-color);
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the wrapper spans the full height of the viewport */
+}
+
+.container-fluid {
+    display: flex;
+    flex: 1; /* Make the container fluid grow to fill available space */
+}
+
+.footer {
+    margin-top: auto; /* Push the footer to the bottom */
+}
+.sidebar {
+    width: 40%; /* Adjust width of the sidebar (increased by 15%) */
+}

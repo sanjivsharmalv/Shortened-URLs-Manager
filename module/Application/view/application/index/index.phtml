@@ -1,0 +1,107 @@
+<div class="min-h-screen">
+<div class="w-full">
+    <div class="mx-auto px-0 w-full">
+        <?php include __DIR__ . '/../../partials/top_nav_bar_menu_logged_out.phtml'; ?>
+    </div>
+</div>
+<div class="flex">
+    <!-- Main Content -->
+    <?php if (empty($messageType)) { ?>
+        <div class="flex-1 p-10">
+
+            <div class=" mx-auto px-4 max-w-full mt-14 items-center"  style="min-width: 90%;">
+                <div id="inner" class=" shadow-lg rounded-lg overflow-hidden items-center bg-white ">
+                    <div class="px-6 py-4 text-gray-800 flex justify-between items-center">
+
+                            <div class="text-center">
+                                <h1 class="text-2xl font-bold mb-4 text-gray-700">Welcome</h1>
+                                <p class="mb-4 text-gray-600">The highlights of the app are as follows:</p>
+                                <div class="card-container">
+                                    <div class="flex-column">
+                                        <div class="card shadow-lg compact bg-white border border-gray-200">
+                                            <div class="card-body ">
+                                                <i class="fa fa-user text-yellow-500 font-bold m-2" style="font-size:27px"></i>
+                                                <span>One can register herself/himself with the app.</span>
+                                            </div>
+                                        </div>
+                                        <div class="card shadow-lg compact bg-white border border-gray-200">
+                                            <div class="card-body">
+                                                <i class="fa fa-user-plus text-yellow-500 font-bold m-2" style="font-size:27px"></i>
+                                                <span>
+                                                One can manage the shortened URLs with the app. Please note that the app does not generate the Shortened URLs, it just helps you perform all CRUD operations.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-column">
+                                        <div class="card shadow-lg compact bg-white border border-gray-200">
+                                            <div class="card-body">
+                                                <i class="fa fa-external-link text-yellow-500 font-bold m-2" style="font-size:27px"></i>
+                                                <span>
+                                                As an add-on, it also provides limited functionality for the admin account to manage the users.
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="card shadow-lg compact bg-white border border-gray-200">
+                                            <div class="card-body">
+                                                <i class="fa fa-lock text-yellow-500 font-bold m-2" style="font-size:27px"></i>
+                                                <span>
+                                                Please note that as soon as you install the app and access the home page for the first time it creates the admin account with credentials as below
+                                                <br>Email: test@globaltickets.nl    Password: Test!234
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } elseif($messageType == 'alreadyloggedin'){ ?>
+        <div class="flex-1">
+            <div class="flex items-center justify-center h-screen">
+                <div class="bg-white p-6 rounded-lg shadow-md max-w-md w-full">
+                    <!-- Success Message -->
+                    <div class="flex items-center justify-center text-blue-700 mb-4">
+                        <!-- Success Icon -->
+                        <i class="fa fa-info-circle fa-font text-blue-700" aria-hidden="true"></i>
+                        <!-- Success Message Text -->
+                        <span class="text-xl font-semibold p-5">User is already logged in </span>
+                    </div>
+                    <!-- Redirect Link -->
+                    <p class="text-center text-gray-600 mb-4 text-md">You may want to login as a different user: <a href="/logout" class="text-blue-500 hover:underline">Logout</a>.</p>
+                    <!-- Back to Home Link -->
+                    <p class="text-center text-gray-600">Back to <a href="/" class="text-blue-500 hover:underline">Home</a>.</p>
+                </div>
+            </div>
+        </div>
+    <?php } else { ?>
+    <div class="flex-1">
+        <div class="flex items-center justify-center h-screen">
+            <div class="bg-white p-6 rounded-lg shadow-md max-w-md w-full">
+                <!-- Success Message -->
+                <div class="flex items-center justify-center text-green-500 mb-4">
+                    <!-- Success Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.293 9.293a1 1 0 011.414-1.414L10 10.586l2.293-2.293a1 1 0 111.414 1.414L11.414 12l2.293 2.293a1 1 0 01-1.414 1.414L10 13.414l-2.293 2.293a1 1 0 01-1.414-1.414L8.586 12 6.293 9.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                    <!-- Success Message Text -->
+                    <span class="text-xl font-semibold">Registration Successful!</span>
+                </div>
+                <!-- Redirect Link -->
+                <p class="text-center text-gray-600 mb-4 text-md">You have been successfully registered with Global Ticket's URL Mapper App. You can now <a href="/login" class="text-blue-500 hover:underline">login</a>.</p>
+                <!-- Back to Home Link -->
+                <p class="text-center text-gray-600">Back to <a href="/" class="text-blue-500 hover:underline">Home</a>.</p>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+</div>
+</div>
+
+
+
+
+

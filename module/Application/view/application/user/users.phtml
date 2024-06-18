@@ -1,0 +1,78 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
+
+<div class="min-h-screen">
+    <div class="w-full">
+
+        <?php include __DIR__ . '/../../partials/top_nav_bar_menu_logged_out.phtml'; ?>
+
+    </div>
+    <div class="flex">
+    <!-- Central Panel -->
+    <?php
+    include __DIR__.'/../../partials/sidebar_dashboard.phtml';
+    ?>
+    <!-- Main Content -->
+    <div class="flex-1 p-10">
+        <!--<h1 class="text-3xl font-bold">Welcome to the Dashboard</h1>
+        <p class="mt-4">This is the main content area.</p>-->
+
+        <div class=" mx-auto px-4 max-w-full mt-14 items-center"  style="min-width: 90%;">
+            <div id="inner" class=" shadow-lg rounded-lg overflow-hidden items-center bg-white ">
+                <div class="px-6 py-4 text-gray-800 flex justify-between items-center">
+                    <div class="text-left">
+                        <h3 class="text-xl font-semibold text-blue-700">Users</h3>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <!-- Pagination bar -->
+                        
+                        <!-- Plus icon -->
+                       
+                        <!-- Trash icon -->
+                       
+                    </div>
+                </div>
+                <div class="overflow-x-auto text-center mx-2">
+                    <table class="w-full min-w-[800px]  bg-gray-800 border-collapse border border-gray-300 mb-3 shadow-md rounded-lg overflow-hidden">
+                        <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="px-4 py-2 text-left">Username</th>
+                            <th class="px-4 py-2 text-left">First Name</th>
+                            <th class="px-4 py-2 text-left">Middle Name</th>
+                            <th class="px-4 py-2 text-left">Last Name</th>
+                            <th class="px-4 py-2 text-left">Email</th>
+                            <th class="px-4 py-2 text-left">Status</th>
+                            <th class="px-4 py-2 text-left">Created</th>
+                            <th class="px-4 py-2 text-left">Modified</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php if(!is_null($this->users)) foreach ($this->users as $user) { ?>
+                            <tr class="bg-white border-b hover:bg-gray-300 text-gray-800 text-left">
+                                <td class="px-4 py-2 "><?= $user->getUserName()?></td>
+                                <td class="px-4 py-2"><?= $user->getFirstName()?></td>
+                                <td class="px-4 py-2"><?= $user->getMiddleName()?></td>
+                                <td class="px-4 py-2"><?= $user->getLastName()?></td>
+                                <td class="px-4 py-2"><?= $user->getEmail()?></td>
+                                <td class="px-4 py-2"><?= $user->getState()?></td>
+                                <td class="px-4 py-2"><?= $user->getCreated()->format('Y-m-d H:i:s')?></td>
+                                <td class="px-4 py-2"><?= $user->getModified()->format('Y-m-d H:i:s')?></td>
+                                
+                            </tr>
+                        <?php } ?>
+                        <!-- Repeat for more rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
