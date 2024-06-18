@@ -44,6 +44,7 @@ class UserController extends AbstractActionController
 
         // Create user.
         $currentUser = $this->getCurrentUser();
+        $vm->setVariable('user', $currentUser);
 
         $userMessageType = $queryParameters->get('userMessageType', '');
         $vm->setVariable('userMessageType', $userMessageType);

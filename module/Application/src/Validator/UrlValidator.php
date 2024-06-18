@@ -17,7 +17,6 @@ class UrlValidator extends AbstractValidator
 
     public function isValid($value)
     {
-        var_dump($value);
         $validator = new LaminasUriValidator();
 
         if (!$validator->isValid($value)) {

@@ -12,7 +12,6 @@ $descriptionElement = $shortenedUrlForm->get('description');
 $fullUrlElement = $shortenedUrlForm->get('full-url');
 $shortenedUrlElement = $shortenedUrlForm->get('shortened-url');
 $commentsElement = $shortenedUrlForm->get('comments');
-$statusTypesElement = $shortenedUrlForm->get('status-type');
 
 $csrfElement = $shortenedUrlForm->get('shortened_url_csrf');
 
@@ -53,8 +52,8 @@ $shortenedUrlForm->prepare();
                 <div class="mb-4 p-4 text-red-700 bg-red-100 border border-red-400 rounded">
                     <?= htmlspecialchars($generalError, ENT_QUOTES, 'UTF-8') ?>
                 </div>
-                <?php if ($messages['shortened_url_csrf']):?>
 
+                <?php if (isset($messages['shortened_url_csrf'])): ?>
                 <div class="mb-4 p-4 text-red-700 bg-red-100 border border-red-400 rounded">
                     <?= htmlspecialchars(implode(', ', $messages['shortened_url_csrf']), ENT_QUOTES, 'UTF-8') ?>
                 </div>

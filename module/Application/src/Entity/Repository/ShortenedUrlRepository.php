@@ -12,6 +12,8 @@ class ShortenedUrlRepository extends EntityRepository
     private const PAGE_SIZE = 20;
     public function fetchShortenedUrls($entityManager, $user, $pageNumber, $status = 'active')
     {
+        $shortenedUrls = [];
+        
         // Get today's date, start of the day so that we also include urls
         // created /modified today as well
         $today = new \DateTime('today');

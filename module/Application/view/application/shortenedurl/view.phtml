@@ -6,7 +6,6 @@ $description = $shortenedUrlObj->getDescription();
 $fullUrl = $shortenedUrlObj->getFullUrl();
 $shortenedUrl = $shortenedUrlObj->getShortenedUrl();
 $comments = $shortenedUrlObj->getComments();
-$status = $shortenedUrlObj->getStatus();
 
 $created = $shortenedUrlObj->getCreated();
 $modified = $shortenedUrlObj->getModified();
@@ -45,10 +44,7 @@ $modified = $shortenedUrlObj->getModified();
                         <label class="block text-gray-700 text-sm font-bold mb-2">Comments:</label>
                         <p class="text-gray-900 text-base"><?=  $comments ?></p>
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2">Status:</label>
-                        <p class="text-green-500 text-base"><?=  $status ?></p>
-                    </div>
+                   
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Created:</label>
                         <p class="text-gray-900 text-base"><?=  $created->format('Y:m:d')?></p>

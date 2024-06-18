@@ -91,7 +91,6 @@ class AuthController extends AbstractActionController
             } else {
                 $loginErrorMessages = $form->getMessages();
                 $vm->setVariable('loginErrorMessages', $loginErrorMessages);
-                var_dump($loginErrorMessages);
                 $parsedErrors = $this->parseValidationErrors($loginErrorMessages);
                 $vm->setTemplate('./application/auth/login.phtml');
                 // Handle form validation errors
@@ -125,8 +124,7 @@ class AuthController extends AbstractActionController
 
         foreach ($errors as $field => $fieldErrors) {
             foreach ($fieldErrors as $errorType => $errorMessage) {
-                var_dump('errorType:');
-                var_dump($errorType);
+                
                 if ($errorType == 'regexNotMatch') {
                     $errorMessage = 'Invalid email format. Please use a format like example@domain.com';
                 }

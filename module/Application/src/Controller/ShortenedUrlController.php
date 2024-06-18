@@ -109,8 +109,6 @@ class ShortenedUrlController extends AbstractActionController
             } else {
                 $messageType = "error";
                 $messages = $shortenedUrlForm->getMessages();
-
-                var_dump($messages);
                 $vm->setVariable('messages', $messages);
             }
         }
