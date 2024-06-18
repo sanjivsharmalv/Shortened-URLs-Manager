@@ -23,7 +23,7 @@ The application addresses the following use cases:
 
 Open your terminal (or command prompt) and execute the following command:
    
-   https://github.com/sanjivsharmalv/Shortened-URLs-Manager.git
+    $> git clone https://github.com/sanjivsharmalv/Shortened-URLs-Manager.git
    
 ## Go to Project Directory
 $> cd ~/<project_dir>
